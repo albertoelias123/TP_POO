@@ -61,8 +61,8 @@ public class Venda {
         return produtosVendidos;
     }
 
-    public void setProdutosVendidos(ArrayList<Produto> produtosVendidos) {
-        this.produtosVendidos = produtosVendidos;
+    public void setProdutosVendidos(Produto produtosVendidos) {
+        this.produtosVendidos.add(produtosVendidos);
     }
 
     public Venda(Cliente cliente, int enderecoCliente, Date dataCompra, String status, ArrayList<Produto> produtosVendidos) throws Exception {
@@ -70,7 +70,7 @@ public class Venda {
         this.setEnderecoCliente(enderecoCliente);
         this.setDataCompra(dataCompra);
         this.setStatus(status);
-        this.setProdutosVendidos(produtosVendidos);
+        this.produtosVendidos = new ArrayList();
     }
     
     
