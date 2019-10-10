@@ -7,15 +7,71 @@ package local.alberto.tp2.view;
 
 /**
  *
- * @author alber
+ * @author Lucas Soares Gomes
  */
-public class ProdutoView extends javax.swing.JPanel {
+public class ProdutoView extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ProdutoView
      */
+    
+    final public void initialState(){
+        btnConsultarProduto.setEnabled(true);
+        btnNovoProduto.setEnabled(true);
+        btnEditarProduto.setEnabled(false);
+        btnExcluirProduto.setEnabled(false);
+        btnLimparProduto.setEnabled(false);
+        btnSalvarProduto.setEnabled(false);
+        txtCodProduto.setEnabled(true);
+        txtNomeProduto.setEnabled(false);
+        txtPrecoProduto.setEnabled(false);
+        txtADescricaoProduto.setEnabled(false);
+        txtQtdEstoqueProduto.setEnabled(false);
+        txtCategoriaProduto.setEnabled(false);
+    }
+    
+    final public void newState(){
+        btnConsultarProduto.setEnabled(true);
+        btnNovoProduto.setEnabled(false);
+        btnEditarProduto.setEnabled(false);
+        btnExcluirProduto.setEnabled(false);
+        btnLimparProduto.setEnabled(true);
+        btnSalvarProduto.setEnabled(true);
+        txtCodProduto.setEnabled(true);
+        txtNomeProduto.setEnabled(true);
+        txtPrecoProduto.setEnabled(true);
+        txtADescricaoProduto.setEnabled(true);
+        txtQtdEstoqueProduto.setEnabled(true);
+        txtCategoriaProduto.setEnabled(true);
+    }
+    
+    final public void readState(){
+        btnConsultarProduto.setEnabled(true);
+        btnNovoProduto.setEnabled(true);
+        btnEditarProduto.setEnabled(true);
+        btnExcluirProduto.setEnabled(true);
+        btnLimparProduto.setEnabled(false);
+        btnSalvarProduto.setEnabled(false);
+        txtCodProduto.setEnabled(false);
+        txtNomeProduto.setEnabled(true);
+        txtPrecoProduto.setEnabled(true);
+        txtADescricaoProduto.setEnabled(true);
+        txtQtdEstoqueProduto.setEnabled(true);
+        txtCategoriaProduto.setEnabled(true);
+    }
+    
+    final public void clean(){
+        txtCodProduto.setText(null);
+        txtNomeProduto.setText(null);
+        txtPrecoProduto.setText(null);
+        txtADescricaoProduto.setText(null);
+        txtQtdEstoqueProduto.setText(null);
+        txtCategoriaProduto.setText(null);
+    }
+    
     public ProdutoView() {
         initComponents();
+        initialState();
     }
 
     /**
@@ -27,32 +83,184 @@ public class ProdutoView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtADescricaoProduto = new javax.swing.JTextArea();
+        txtCategoriaProduto = new javax.swing.JTextField();
+        txtQtdEstoqueProduto = new javax.swing.JTextField();
+        txtPrecoProduto = new javax.swing.JTextField();
+        txtNomeProduto = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        btnConsultarProduto = new javax.swing.JButton();
+        btnNovoProduto = new javax.swing.JButton();
+        btnEditarProduto = new javax.swing.JButton();
+        btnLimparProduto = new javax.swing.JButton();
+        txtCodProduto = new javax.swing.JTextField();
+        btnSalvarProduto = new javax.swing.JButton();
+        btnExcluirProduto = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(51, 102, 255));
-        setMaximumSize(new java.awt.Dimension(901, 551));
-        setMinimumSize(new java.awt.Dimension(899, 549));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setClosable(true);
+        setIconifiable(true);
+        setTitle("Cadastro de produtos");
+        getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel1.setText("Produtos View");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, -1, -1));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do Produto"));
+        jPanel1.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel2.setText("Produtos View");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
+        jLabel2.setText("Descrição");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(20, 110, 70, 30);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel3.setText("Produtos View");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel3.setText("Quantidade em estoque");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(20, 220, 140, 30);
+
+        jLabel5.setText("Categoria");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(20, 260, 55, 30);
+
+        jLabel4.setText("Preço");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 70, 60, 30);
+
+        jLabel6.setText("Nome");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(20, 30, 50, 30);
+
+        txtADescricaoProduto.setColumns(20);
+        txtADescricaoProduto.setRows(5);
+        jScrollPane1.setViewportView(txtADescricaoProduto);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(110, 110, 460, 83);
+        jPanel1.add(txtCategoriaProduto);
+        txtCategoriaProduto.setBounds(170, 260, 180, 30);
+        jPanel1.add(txtQtdEstoqueProduto);
+        txtQtdEstoqueProduto.setBounds(170, 220, 180, 30);
+        jPanel1.add(txtPrecoProduto);
+        txtPrecoProduto.setBounds(110, 70, 180, 30);
+        jPanel1.add(txtNomeProduto);
+        txtNomeProduto.setBounds(110, 30, 180, 30);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(30, 80, 600, 330);
+
+        jLabel1.setText("Código");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(40, 30, 41, 30);
+
+        btnConsultarProduto.setText("Consultar");
+        btnConsultarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarProdutoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnConsultarProduto);
+        btnConsultarProduto.setBounds(290, 30, 100, 30);
+
+        btnNovoProduto.setText("Novo");
+        btnNovoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoProdutoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnNovoProduto);
+        btnNovoProduto.setBounds(60, 430, 66, 32);
+
+        btnEditarProduto.setText("Editar");
+        btnEditarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarProdutoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEditarProduto);
+        btnEditarProduto.setBounds(280, 430, 77, 32);
+
+        btnLimparProduto.setText("Limpar");
+        btnLimparProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparProdutoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimparProduto);
+        btnLimparProduto.setBounds(520, 430, 77, 32);
+        getContentPane().add(txtCodProduto);
+        txtCodProduto.setBounds(100, 30, 180, 30);
+
+        btnSalvarProduto.setText("Salvar");
+        btnSalvarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarProdutoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalvarProduto);
+        btnSalvarProduto.setBounds(170, 430, 66, 32);
+
+        btnExcluirProduto.setText("Excluir");
+        btnExcluirProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirProdutoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnExcluirProduto);
+        btnExcluirProduto.setBounds(400, 430, 77, 32);
+
+        setBounds(0, 0, 662, 536);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConsultarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarProdutoActionPerformed
+        readState();
+    }//GEN-LAST:event_btnConsultarProdutoActionPerformed
+
+    private void btnNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoProdutoActionPerformed
+        newState();
+    }//GEN-LAST:event_btnNovoProdutoActionPerformed
+
+    private void btnEditarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProdutoActionPerformed
+        clean();
+        initialState();
+    }//GEN-LAST:event_btnEditarProdutoActionPerformed
+
+    private void btnLimparProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparProdutoActionPerformed
+        clean();
+    }//GEN-LAST:event_btnLimparProdutoActionPerformed
+
+    private void btnSalvarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarProdutoActionPerformed
+        clean();
+        initialState();
+    }//GEN-LAST:event_btnSalvarProdutoActionPerformed
+
+    private void btnExcluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
+        clean();
+        initialState();
+    }//GEN-LAST:event_btnExcluirProdutoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsultarProduto;
+    private javax.swing.JButton btnEditarProduto;
+    private javax.swing.JButton btnExcluirProduto;
+    private javax.swing.JButton btnLimparProduto;
+    private javax.swing.JButton btnNovoProduto;
+    private javax.swing.JButton btnSalvarProduto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtADescricaoProduto;
+    private javax.swing.JTextField txtCategoriaProduto;
+    private javax.swing.JTextField txtCodProduto;
+    private javax.swing.JTextField txtNomeProduto;
+    private javax.swing.JTextField txtPrecoProduto;
+    private javax.swing.JTextField txtQtdEstoqueProduto;
     // End of variables declaration//GEN-END:variables
 }
