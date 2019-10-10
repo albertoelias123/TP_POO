@@ -16,9 +16,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        jPanel.removeAll();
-        jPanel.add(new ProdutoView());
-        jPanel.revalidate();
+        jdpArea.removeAll();
+        jdpArea.revalidate();
     }
 
     /**
@@ -30,36 +29,74 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel = new javax.swing.JPanel();
+        jdpArea = new javax.swing.JDesktopPane();
         jMenuBarPrincipal = new javax.swing.JMenuBar();
-        jMenuProdutos = new javax.swing.JMenu();
-        jMenuClientes = new javax.swing.JMenu();
-        jMenuVendas = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jmiAddProduct = new javax.swing.JMenuItem();
+        jmiAddClient = new javax.swing.JMenuItem();
+        jmiAddVenda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gestão Comercial v1.0alpha");
         setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
-        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
-
-        jPanel.setPreferredSize(new java.awt.Dimension(875, 500));
-        jPanel.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(jPanel);
+        getContentPane().setLayout(null);
+        getContentPane().add(jdpArea);
+        jdpArea.setBounds(0, 0, 1110, 750);
 
         jMenuBarPrincipal.setPreferredSize(new java.awt.Dimension(900, 50));
 
-        jMenuProdutos.setText("Produtos");
-        jMenuBarPrincipal.add(jMenuProdutos);
+        jMenu1.setText("Cadastro");
 
-        jMenuClientes.setText("Clientes");
-        jMenuBarPrincipal.add(jMenuClientes);
+        jmiAddProduct.setText("Produto");
+        jmiAddProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAddProductActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmiAddProduct);
 
-        jMenuVendas.setText("Vendas");
-        jMenuBarPrincipal.add(jMenuVendas);
+        jmiAddClient.setText("Cliente");
+        jmiAddClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAddClientActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmiAddClient);
+
+        jmiAddVenda.setText("Venda");
+        jmiAddVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAddVendaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmiAddVenda);
+
+        jMenuBarPrincipal.add(jMenu1);
 
         setJMenuBar(jMenuBarPrincipal);
 
-        pack();
+        setSize(new java.awt.Dimension(1108, 831));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmiAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAddProductActionPerformed
+        ProdutoView produtoView = new ProdutoView();
+        jdpArea.add(produtoView);
+        produtoView.setVisible(true);
+    }//GEN-LAST:event_jmiAddProductActionPerformed
+
+    private void jmiAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAddClientActionPerformed
+        ClienteView clienteView = new ClienteView();
+        jdpArea.add(clienteView);
+        clienteView.setVisible(true);
+    }//GEN-LAST:event_jmiAddClientActionPerformed
+
+    private void jmiAddVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAddVendaActionPerformed
+        VendaView vendaView = new VendaView();
+        jdpArea.add(vendaView);
+        vendaView.setVisible(true);
+    }//GEN-LAST:event_jmiAddVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,10 +135,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBarPrincipal;
-    private javax.swing.JMenu jMenuClientes;
-    private javax.swing.JMenu jMenuProdutos;
-    private javax.swing.JMenu jMenuVendas;
-    private javax.swing.JPanel jPanel;
+    private javax.swing.JDesktopPane jdpArea;
+    private javax.swing.JMenuItem jmiAddClient;
+    private javax.swing.JMenuItem jmiAddProduct;
+    private javax.swing.JMenuItem jmiAddVenda;
     // End of variables declaration//GEN-END:variables
 }
