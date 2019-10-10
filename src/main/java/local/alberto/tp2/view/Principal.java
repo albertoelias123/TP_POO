@@ -42,7 +42,7 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
         getContentPane().add(jdpArea);
-        jdpArea.setBounds(0, 0, 1110, 750);
+        jdpArea.setBounds(0, 0, 1090, 750);
 
         jMenuBarPrincipal.setPreferredSize(new java.awt.Dimension(900, 50));
 
