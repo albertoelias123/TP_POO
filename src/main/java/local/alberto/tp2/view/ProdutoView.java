@@ -37,7 +37,7 @@ public class ProdutoView extends javax.swing.JInternalFrame {
         btnExcluirProduto.setEnabled(false);
         btnLimparProduto.setEnabled(true);
         btnSalvarProduto.setEnabled(true);
-        txtCodProduto.setEnabled(true);
+        txtCodProduto.setEnabled(false);
         txtNomeProduto.setEnabled(true);
         txtPrecoProduto.setEnabled(true);
         txtADescricaoProduto.setEnabled(true);
@@ -52,7 +52,7 @@ public class ProdutoView extends javax.swing.JInternalFrame {
         btnExcluirProduto.setEnabled(true);
         btnLimparProduto.setEnabled(false);
         btnSalvarProduto.setEnabled(false);
-        txtCodProduto.setEnabled(false);
+        txtCodProduto.setEnabled(true);
         txtNomeProduto.setEnabled(true);
         txtPrecoProduto.setEnabled(true);
         txtADescricaoProduto.setEnabled(true);
@@ -61,6 +61,7 @@ public class ProdutoView extends javax.swing.JInternalFrame {
     }
     
     final public void clean(){
+        initialState();
         txtCodProduto.setText(null);
         txtNomeProduto.setText(null);
         txtPrecoProduto.setText(null);
@@ -170,7 +171,7 @@ public class ProdutoView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnNovoProduto);
-        btnNovoProduto.setBounds(60, 430, 66, 32);
+        btnNovoProduto.setBounds(50, 430, 66, 32);
 
         btnEditarProduto.setText("Editar");
         btnEditarProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -181,14 +182,14 @@ public class ProdutoView extends javax.swing.JInternalFrame {
         getContentPane().add(btnEditarProduto);
         btnEditarProduto.setBounds(280, 430, 77, 32);
 
-        btnLimparProduto.setText("Limpar");
+        btnLimparProduto.setText("Cancelar");
         btnLimparProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparProdutoActionPerformed(evt);
             }
         });
         getContentPane().add(btnLimparProduto);
-        btnLimparProduto.setBounds(520, 430, 77, 32);
+        btnLimparProduto.setBounds(520, 430, 90, 32);
         getContentPane().add(txtCodProduto);
         txtCodProduto.setBounds(100, 30, 180, 30);
 

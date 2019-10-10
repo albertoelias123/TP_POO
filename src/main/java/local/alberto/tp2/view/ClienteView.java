@@ -58,6 +58,7 @@ public class ClienteView extends javax.swing.JInternalFrame {
     }
     
     final public void clean(){
+        initialState();
         txtCodCliente.setText(null);
         txtCPFCliente.setText(null);
         txtNomeCliente.setText(null);
@@ -144,14 +145,14 @@ public class ClienteView extends javax.swing.JInternalFrame {
         getContentPane().add(btnConsultarCliente);
         btnConsultarCliente.setBounds(310, 30, 100, 32);
 
-        btnLimparCliente.setText("Limpar");
+        btnLimparCliente.setText("Cancelar");
         btnLimparCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparClienteActionPerformed(evt);
             }
         });
         getContentPane().add(btnLimparCliente);
-        btnLimparCliente.setBounds(530, 230, 77, 32);
+        btnLimparCliente.setBounds(530, 230, 90, 32);
 
         btnEditarCliente.setText("Editar");
         btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +191,7 @@ public class ClienteView extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnNovoCliente);
-        btnNovoCliente.setBounds(50, 230, 58, 32);
+        btnNovoCliente.setBounds(40, 230, 58, 32);
 
         btnExcluirCliente.setText("Excluir");
         btnExcluirCliente.addActionListener(new java.awt.event.ActionListener() {
