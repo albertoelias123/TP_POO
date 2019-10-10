@@ -12,7 +12,7 @@ package local.alberto.tp2.model;
 public class Produto {
     private int id;
     private String descricao;
-    private int qtdEstoque;
+    private int qtd;
     private String categoria;
     private double preco;
     private String nome; // (Tipo)
@@ -20,7 +20,7 @@ public class Produto {
     public Produto(int id, String descricao, int qtdEstoque, String categoria, double preco, String nome) throws Exception {
         this.setId(id);
         this.setDescricao(descricao);
-        this.setQtdEstoque(qtdEstoque);
+        this.setQtd(qtdEstoque);
         this.setCategoria(categoria);
         this.setPreco(preco);
         this.setNome(nome);
@@ -48,13 +48,13 @@ public class Produto {
             throw new Exception("Descrição Inválida! A Descrição deve possui no minimo 5 caracteres.", new Throwable(descricao));
     }
 
-    public int getQtdEstoque() {
-        return qtdEstoque;
+    public int getQtd() {
+        return qtd;
     }
 
-    public void setQtdEstoque(int qtdEstoque) throws Exception {
+    public void setQtd(int qtdEstoque) throws Exception {
         if(qtdEstoque >= 0)
-            this.qtdEstoque = qtdEstoque;
+            this.qtd = qtdEstoque;
         else
             throw new Exception("Quantidade em Estoque Inválida! A quantidade em estoque deve ser maior ou igual a 0.", new Throwable(String.valueOf(qtdEstoque)));
     }
@@ -94,7 +94,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" + "id=" + id + ", descricao=" + descricao + ", qtdEstoque=" + qtdEstoque + ", categoria=" + categoria + ", preco=" + preco + ", nome=" + nome + '}';
+        return "Produto{" + "id=" + id + ", descricao=" + descricao + ", qtdEstoque=" + qtd + ", categoria=" + categoria + ", preco=" + preco + ", nome=" + nome + '}';
     }
     
     
