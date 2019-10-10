@@ -46,7 +46,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBarPrincipal.setPreferredSize(new java.awt.Dimension(900, 50));
 
-        jMenu1.setText("Cadastro");
+        jMenu1.setText("Sistema");
 
         jmiAddProduct.setText("Produto");
         jmiAddProduct.addActionListener(new java.awt.event.ActionListener() {
