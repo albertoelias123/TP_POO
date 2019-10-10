@@ -5,6 +5,8 @@
  */
 package local.alberto.tp2.view;
 
+import local.alberto.tp2.controller.ProdutoController;
+
 /**
  *
  * @author alber
@@ -18,6 +20,9 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         jdpArea.removeAll();
         jdpArea.revalidate();
+        
+        // Inicializa Controller's
+        ProdutoController.inicializa();
     }
 
     /**
